@@ -1,0 +1,33 @@
+{
+  "name": "donation-flow",
+  "version": "1.0.0",
+  "description": "Donation Flow: A MERN stack web application for tracking charitable contributions and fund distributions. Features user-friendly donation management, admin controls, and insightful reporting. Streamline your charity's financial flow with secure, phone-verified user accounts and automated contribution reminders. ",
+  "main": "server/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon server/server.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmed-abdelhameed1706/donation-flow.git"
+  },
+  "author": "Ahmed Abd El Hameed",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ahmed-abdelhameed1706/donation-flow/issues"
+  },
+  "homepage": "https://github.com/ahmed-abdelhameed1706/donation-flow#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "mongoose": "^8.7.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "nodemon": "^3.1.7"
+  }
+}

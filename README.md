@@ -41,7 +41,7 @@ Donation Flow is built using the MERN stack:
 
    ```
    npm install
-   cd frontend && npm install
+   cd client && npm install
    ```
 
 3. Set up environment variables:
