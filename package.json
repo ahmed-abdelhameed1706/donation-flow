@@ -4,7 +4,11 @@
   "description": "Donation Flow: A MERN stack web application for tracking charitable contributions and fund distributions. Features user-friendly donation management, admin controls, and insightful reporting. Streamline your charity's financial flow with secure, phone-verified user accounts and automated contribution reminders. ",
   "main": "server/server.js",
   "type": "module",
+  "engines": {
+    "node": ">=18.x"
+  },
   "scripts": {
+    "start": "node server/server.js",
     "dev": "nodemon server/server.js",
     "test": "jest"
   },
