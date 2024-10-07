@@ -1,7 +1,13 @@
 import express from "express";
 import cors from "cors";
 import path from "path";
+import cookieParser from "cookie-parser";
+
 import loggingMiddleware from "./middleware/loggingMiddleware.js";
+
+import adminRoutes from "./routes/admin.routes.js";
+import userRoutes from "./routes/user.routes.js";
+
 const ORIGIN =
   process.env.NODE_ENV === "production"
     ? process.env.PROD_FRONTEND_URL
@@ -15,6 +21,8 @@ const createServer = () => {
   app.use(loggingMiddleware);
 
   app.use(express.json());
+  app.use(express.urlencoded({ extended: true }));
+  app.use(cookieParser());
 
   app.use(
     cors({
@@ -22,6 +30,9 @@ const createServer = () => {
       credentials: true,
     })
   );
+
+  app.use("/api/admin", adminRoutes);
+  app.use("/api/user", userRoutes);
 
   app.use(express.static(path.join(__dirname, "public")));
 
