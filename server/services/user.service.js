@@ -73,3 +73,15 @@ export const getMe = async (req) => {
     throw new Error("User not found");
   }
 };
+
+export const logout = async (res) => {
+  try {
+    res.clearCookie("jwt", { maxAge: 0 });
+    return {
+      status: 200,
+      message: "Logout successful",
+    };
+  } catch (error) {
+    logger.error("error in the logout service", error);
+  }
+};

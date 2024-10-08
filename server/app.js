@@ -5,6 +5,8 @@ import cookieParser from "cookie-parser";
 
 import loggingMiddleware from "./middleware/loggingMiddleware.js";
 
+import { adminRoute } from "./middleware/adminRoute.js";
+
 import adminRoutes from "./routes/admin.routes.js";
 import userRoutes from "./routes/user.routes.js";
 
@@ -31,7 +33,7 @@ const createServer = () => {
     })
   );
 
-  app.use("/api/admin", adminRoutes);
+  app.use("/api/admin", adminRoute, adminRoutes);
   app.use("/api/user", userRoutes);
 
   app.use(express.static(path.join(__dirname, "public")));

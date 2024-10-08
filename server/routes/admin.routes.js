@@ -1,11 +1,14 @@
 import express from "express";
 
 import logger from "../utils/logger.js";
-import { createUserController } from "../controllers/admin.controller.js";
-import { adminRoute } from "../middleware/adminRoute.js";
+import {
+  createUserController,
+  getUsersController,
+} from "../controllers/admin.controller.js";
 
 const router = express.Router();
 
-router.post("/create-user", adminRoute, createUserController);
+router.post("/users", createUserController);
+router.get("/users", getUsersController);
 
 export default router;

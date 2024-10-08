@@ -1,6 +1,7 @@
 import logger from "../utils/logger.js";
 import User from "../models/user.model.js";
 import { sendRegisterEmail } from "../email/emails.js";
+
 export const createUser = async (userInput) => {
   try {
     const { name, email } = userInput;
@@ -38,5 +39,18 @@ export const createUser = async (userInput) => {
     };
   } catch (error) {
     logger.error("error in the createUser service", error);
+  }
+};
+
+export const getUsers = async () => {
+  try {
+    const users = await User.find({}).select("-password").exec();
+    return {
+      status: 200,
+      message: "Users fetched successfully",
+      users,
+    };
+  } catch (error) {
+    logger.error("error in the getUsers service", error);
   }
 };
